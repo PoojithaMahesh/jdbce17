@@ -12,9 +12,8 @@ public class SelectUser {
 		Connection connection=DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbce17","root","root");
 		Statement statement=connection.createStatement();
 		ResultSet resultSet=statement.executeQuery("select * from User where id =2");
-		
 		while(resultSet.next()) {
-			System.out.println(resultSet.getInt(1));
+			System.out.println(resultSet.getInt("id"));
 			System.out.println(resultSet.getString(2));
 			System.out.println(resultSet.getString(3));
 		}
